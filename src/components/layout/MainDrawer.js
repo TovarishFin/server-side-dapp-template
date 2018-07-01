@@ -48,6 +48,9 @@ const MainDrawer = ({
       >
         {'Home'}
       </MenuItem>
+      <MenuItem component={Link} onClick={dispatchCloseDrawer} to="/transfer">
+        {'Transfer EXT'}
+      </MenuItem>
     </Drawer>
   </div>
 )
@@ -63,4 +66,7 @@ const mapDispatchToProps = {
   dispatchGoToPage: goToPage
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MainDrawer)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MainDrawer)

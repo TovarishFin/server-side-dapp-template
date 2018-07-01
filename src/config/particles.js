@@ -8,13 +8,13 @@ const config = {
       }
     },
     color: {
-      value: '#86bdce'
+      value: 'blue'
     },
     shape: {
       type: 'circle',
       stroke: {
         width: 0,
-        color: '#86bdce'
+        color: 'blue'
       },
       polygon: {
         nb_sides: 4
@@ -48,7 +48,7 @@ const config = {
     line_linked: {
       enable: true,
       distance: 150,
-      color: '#86bdce',
+      color: 'blue',
       opacity: 0.4,
       width: 1
     },

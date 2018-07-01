@@ -34,11 +34,17 @@ class Home extends React.Component {
           className={classes.sampleText}
           variant="title"
         >
-          {'ExampleToken'}{' '}
-        </Typography>{' '}
-        <ContractData contract="ExampleToken" method="name" />
-        <ContractData contract="ExampleToken" method="symbol" />
-        <ContractData contract="ExampleToken" method="decimals" />
+          {'ExampleToken'}
+        </Typography>
+        <Typography variant="subheading">
+          <ContractData contract="ExampleToken" method="name" />
+        </Typography>
+        <Typography variant="subheading">
+          <ContractData contract="ExampleToken" method="symbol" />
+        </Typography>
+        <Typography variant="subheading">
+          <ContractData contract="ExampleToken" method="decimals" />
+        </Typography>
       </BlockchainPage>
     )
   }

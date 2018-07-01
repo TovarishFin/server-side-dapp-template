@@ -137,7 +137,6 @@ module.exports = {
     ],
     "react/jsx-no-literals": "error",
     "react/jsx-pascal-case": "error",
-    "react/jsx-sort-props": "error",
     "react/jsx-wrap-multilines": "error",
     "react/no-array-index-key": "error",
     "react/no-danger": "error",

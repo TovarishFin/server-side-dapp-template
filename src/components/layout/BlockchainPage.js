@@ -14,27 +14,42 @@ const styles = {
   }
 }
 
-const BlockchainPage = ({ children, classes, paper, drizzleInitialized }) =>
-  drizzleInitialized ? (
-    <div className={classes.flexContainer}>
-      <Grid container justify="center">
-        {paper ? (
-          <Grid item lg={8} md={12} sm={12} xl={8} xs={12}>
-            <Paper className={classes.padded}>{children}</Paper>
+const BlockchainPage = ({
+  children,
+  classes,
+  paper,
+  drizzleInitialized,
+  accounts,
+  accountRequired
+}) => {
+  if (drizzleInitialized) {
+    if (accountRequired && !accounts[0]) {
+      return <p>{'get or unlock metamask!'}</p>
+    } else {
+      return (
+        <div className={classes.flexContainer}>
+          <Grid container justify="center">
+            {paper ? (
+              <Grid item lg={8} md={12} sm={12} xl={8} xs={12}>
+                <Paper className={classes.padded}>{children}</Paper>
+              </Grid>
+            ) : (
+              <Grid item lg={4} md={5} sm={6} xl={3} xs={12}>
+                {children}
+              </Grid>
+            )}
           </Grid>
-        ) : (
-          <Grid item lg={4} md={5} sm={6} xl={3} xs={12}>
-            {children}
-          </Grid>
-        )}
-      </Grid>
-    </div>
-  ) : (
-    <BlockchainLoading />
-  )
+        </div>
+      )
+    }
+  } else {
+    return <BlockchainLoading />
+  }
+}
 
 const mapStateToProps = state => {
   return {
+    accounts: state.accounts,
     drizzleInitialized: state.drizzleStatus.initialized
   }
 }
