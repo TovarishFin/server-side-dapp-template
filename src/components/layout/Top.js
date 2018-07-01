@@ -10,14 +10,6 @@ import { pageSelector } from '../../selectors/location'
 import { withStyles } from 'material-ui/styles'
 
 const styles = {
-  appBarHome: {
-    backgroundColor: 'transparent',
-    boxShadow: 'none',
-    transition: 'background-color 0.1s, box-shadow 0.5s'
-  },
-  appBar: {
-    transition: 'background-color 0.1s, box-shadow 0.5s'
-  },
   menuButton: {
     marginLeft: -12,
     marginRight: 20
@@ -27,10 +19,7 @@ const styles = {
 const isHome = page => page === 'Home'
 
 const Top = ({ dispatchOpenDrawer, page, classes }) => (
-  <AppBar
-    className={isHome(page) ? classes.appBarHome : classes.appBar}
-    position={isHome(page) ? 'fixed' : 'sticky'}
-  >
+  <AppBar position="sticky">
     <Toolbar>
       <IconButton className={classes.menuButton} onClick={dispatchOpenDrawer}>
         <MenuIcon />

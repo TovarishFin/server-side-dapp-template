@@ -1,10 +1,11 @@
 import React from 'react'
+import Typography from 'material-ui/Typography'
 import { withStyles } from 'material-ui/styles'
 import Page from '../layout/Page'
 
 const styles = theme => ({
   sampleText: {
-    color: theme.palette.secondary.dark
+    color: theme.palette.primary.main
   }
 })
 
@@ -26,7 +27,13 @@ class Home extends React.Component {
     const { classes } = this.props
     return (
       <Page>
-        <p className={classes.sampleText}>{'working?'}</p>
+        <Typography
+          align="center"
+          className={classes.sampleText}
+          variant="title"
+        >
+          {'Default DApp text'}
+        </Typography>
       </Page>
     )
   }

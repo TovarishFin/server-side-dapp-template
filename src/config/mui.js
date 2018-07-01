@@ -1,15 +1,13 @@
 import red from 'material-ui/colors/red'
+import indigo from 'material-ui/colors/indigo'
+import purple from 'material-ui/colors/purple'
 
 // All the following keys are optional.
 // We try our best to provide a great default value.
 const theme = {
   palette: {
-    primary: {
-      main: '#3f51b5'
-    },
-    secondary: {
-      main: '#f44336'
-    },
+    primary: indigo,
+    secondary: purple,
     error: red,
     // Used by `getContrastText()` to maximize the contrast between the background and
     // the text.

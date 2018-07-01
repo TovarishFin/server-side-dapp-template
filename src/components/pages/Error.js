@@ -2,7 +2,7 @@ import React from 'react'
 import Page from '../layout/Page'
 import Typography from 'material-ui/Typography'
 
-const Error = ({ error }) => (
+const Error = () => (
   <Page paper>
     <Typography align="center" variant="title">
       {'Oops! An error occurred...'}

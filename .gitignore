@@ -12,7 +12,7 @@ pids
 *.pid.lock
 
 #builds
-build
+buildContracts
 buildClient
 buildServer
 
