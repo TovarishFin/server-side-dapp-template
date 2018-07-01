@@ -30,6 +30,10 @@ module.exports = {
         use: 'babel-loader'
       },
       {
+        test: /\.json$/,
+        loader: 'json-loader'
+      },
+      {
         test: /\.css$/,
         use: ExtractCssChunks.extract({
           use: {
@@ -55,7 +59,8 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.css']
+    modules: [path.resolve('./build'), path.resolve('./node_modules')],
+    extensions: ['.js', '.json', '.css']
   },
   plugins: [
     new WriteFilePlugin(), // used so you can see what chunks are produced in dev

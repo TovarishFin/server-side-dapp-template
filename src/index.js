@@ -1,12 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
+import { DrizzleProvider } from 'drizzle-react'
 import createHistory from 'history/createBrowserHistory'
 import AppContainer from 'react-hot-loader/lib/AppContainer'
 import App from './components/App'
 import configureStore from './configureStore'
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles'
 import themeConfig from './config/mui'
+import drizzleOptions from './drizzleOptions'
 
 const history = createHistory()
 const { store } = configureStore(history, window.REDUX_STATE)
@@ -26,7 +28,9 @@ const render = App => {
     <AppContainer>
       <MuiThemeProvider theme={createMuiTheme(themeConfig)}>
         <Provider store={store}>
-          <App />
+          <DrizzleProvider options={drizzleOptions} store={store}>
+            <App />
+          </DrizzleProvider>
         </Provider>
       </MuiThemeProvider>
     </AppContainer>,

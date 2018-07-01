@@ -1,7 +1,9 @@
 import React from 'react'
 import Typography from 'material-ui/Typography'
 import { withStyles } from 'material-ui/styles'
-import Page from '../layout/Page'
+import { drizzleConnect } from 'drizzle-react'
+import { ContractData } from 'drizzle-react-components'
+import BlockchainPage from '../layout/BlockchainPage'
 
 const styles = theme => ({
   sampleText: {
@@ -26,17 +28,27 @@ class Home extends React.Component {
   render() {
     const { classes } = this.props
     return (
-      <Page>
+      <BlockchainPage>
         <Typography
           align="center"
           className={classes.sampleText}
           variant="title"
         >
-          {'Default DApp text'}
-        </Typography>
-      </Page>
+          {'ExampleToken'}{' '}
+        </Typography>{' '}
+        <ContractData contract="ExampleToken" method="name" />
+        <ContractData contract="ExampleToken" method="symbol" />
+        <ContractData contract="ExampleToken" method="decimals" />
+      </BlockchainPage>
     )
   }
 }
 
-export default withStyles(styles)(Home)
+const mapStateToProps = state => {
+  return {
+    accounts: state.accounts,
+    ExampleToken: state.contracts.ExampleToken
+  }
+}
+
+export default withStyles(styles)(drizzleConnect(Home, mapStateToProps))
