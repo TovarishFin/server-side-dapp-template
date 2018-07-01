@@ -5,10 +5,10 @@ import red from 'material-ui/colors/red'
 const theme = {
   palette: {
     primary: {
-      main: '#e1f5fe'
+      main: '#3f51b5'
     },
     secondary: {
-      main: '#ffebee'
+      main: '#f44336'
     },
     error: red,
     // Used by `getContrastText()` to maximize the contrast between the background and
@@ -29,21 +29,3 @@ const theme = {
 }
 
 export default theme
-
-/*
-palette: {
-  primary1Color: '#e1f5fe',
-  primary2Color: '#ffffff',
-  primary3Color: '#afc2cb',
-  accent1Color: '#ffebee',
-  accent2Color: '#ffffff',
-  accent3Color: '#ccb9bc',
-  primaryTextColor: '#000000',
-  alternateTextColor: '#000000'
-},
-snackbar: {
-  backgroundColor: '#ffebee',
-  actionColor: '#000000',
-  textColor: '#000000'
-}
-*/
