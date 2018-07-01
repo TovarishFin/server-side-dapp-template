@@ -11,10 +11,6 @@ export const goHome = () => ({
   type: 'HOME'
 })
 
-export const goToAdmin = () => ({
-  type: 'ADMIN'
-})
-
 export const notFound = () => ({
   type: NOT_FOUND
 })
@@ -22,7 +18,6 @@ export const notFound = () => ({
 const actions = {
   goToPage,
   goHome,
-  goToAdmin,
   notFound
 }
 

@@ -9,7 +9,6 @@ export const options = {
   events: {
     ExampleToken: ['Transfer', 'Approval']
   },
-  syncaAlways: true,
   web3: {
     block: false,
     fallback: {
