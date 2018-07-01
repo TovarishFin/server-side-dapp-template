@@ -2,7 +2,7 @@ import React from 'react'
 import Typography from 'material-ui/Typography'
 import { withStyles } from 'material-ui/styles'
 import { drizzleConnect } from 'drizzle-react'
-import { ContractData } from 'drizzle-react-components'
+import MaterialContractData from '../common/MaterialContractData'
 import BlockchainPage from '../layout/BlockchainPage'
 import { coinbaseSelector } from '../../selectors/network'
 import MaterialContractForm from '../common/MaterialContractForm'
@@ -22,7 +22,7 @@ const Transfer = ({ classes, coinbase }) => (
     <Typography className={classes.sampleText} variant="caption">
       {'Your EXT balance'}
     </Typography>
-    <ContractData
+    <MaterialContractData
       contract="ExampleToken"
       method="balanceOf"
       methodArgs={[coinbase]}
